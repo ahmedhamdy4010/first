@@ -1,0 +1,667 @@
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>حساب الدخول</title>
+
+        <link rel="icon" href="http://send.ji-ex.com/public/icon.png" type="image/gif" sizes="16x16">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+
+        <link rel="stylesheet" href="./css/all.css" />
+
+        <link rel="stylesheet" href="./css/bootstrap4.3.1-rtl.css" />
+
+
+        <link rel="stylesheet" href="./css/Datatable.css" />
+        <link rel="stylesheet" href="./css/adminstyle.css" />
+
+
+        <style>
+        .center {
+            background: #FFF;
+            padding: 10px;
+            margin: auto;
+            max-width: 800px;
+            border: 1px solid #DDD;
+            border-radius: 5px;
+        }
+        .fa-plus{
+            cursor: pointer;
+            font-size: 16px;
+        }
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+
+.set-size {
+  font-size: 10em;
+}
+@media (max-width:767px){
+    .set-size {
+     flex-direction: column;
+     justify-content: center;
+    }
+}
+
+.charts-container:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.pie-wrapper {
+  height: 1em;
+  width: 1em;
+  float: left;
+  margin: 15px;
+  position: relative;
+}
+.pie-wrapper:nth-child(3n + 1) {
+  clear: both;
+}
+.pie-wrapper .pie {
+  height: 100%;
+  width: 100%;
+  clip: rect(0, 1em, 1em, 0.5em);
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.pie-wrapper .pie .half-circle {
+  height: 100%;
+  width: 100%;
+  border: 0.1em solid #3498db;
+  border-radius: 50%;
+  clip: rect(0, 0.5em, 1em, 0);
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.pie-wrapper .label {
+  background: #34495e;
+  border-radius: 50%;
+  bottom: 0.4em;
+  color: #ecf0f1;
+  cursor: default;
+  display: block;
+  font-size: 0.25em;
+  left: 0.4em;
+  line-height: 2.8em;
+  position: absolute;
+  right: 0.4em;
+  text-align: center;
+  top: 0.4em;
+}
+.pie-wrapper .label .smaller {
+  color: #bdc3c7;
+  font-size: .45em;
+  padding-bottom: 20px;
+  vertical-align: super;
+}
+.pie-wrapper .shadow {
+  height: 100%;
+  width: 100%;
+  border: 0.1em solid #bdc3c7;
+  border-radius: 50%;
+}
+.pie-wrapper.style-2 .label {
+  background: none;
+  color: #7f8c8d;
+}
+.pie-wrapper.style-2 .label .smaller {
+  color: #bdc3c7;
+}
+.pie-wrapper.progress-30 .pie .half-circle {
+  border-color: #3498db;
+}
+.pie-wrapper.progress-30 .pie .left-side {
+  -webkit-transform: rotate(108deg);
+          transform: rotate(108deg);
+}
+.pie-wrapper.progress-30 .pie .right-side {
+  display: none;
+}
+.pie-wrapper.progress-60 .pie {
+  clip: rect(auto, auto, auto, auto);
+}
+.pie-wrapper.progress-60 .pie .half-circle {
+  border-color: #9b59b6;
+}
+.pie-wrapper.progress-60 .pie .left-side {
+  -webkit-transform: rotate(216deg);
+          transform: rotate(216deg);
+}
+.pie-wrapper.progress-60 .pie .right-side {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.pie-wrapper.progress-90 .pie {
+  clip: rect(auto, auto, auto, auto);
+}
+.pie-wrapper.progress-90 .pie .half-circle {
+  border-color: #e67e22;
+}
+.pie-wrapper.progress-90 .pie .left-side {
+  -webkit-transform: rotate(324deg);
+          transform: rotate(324deg);
+}
+.pie-wrapper.progress-90 .pie .right-side {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.pie-wrapper.progress-45 .pie .half-circle {
+  border-color: #1abc9c;
+}
+.pie-wrapper.progress-45 .pie .left-side {
+  -webkit-transform: rotate(162deg);
+          transform: rotate(162deg);
+}
+.pie-wrapper.progress-45 .pie .right-side {
+  display: none;
+}
+.pie-wrapper.progress-75 .pie {
+  clip: rect(auto, auto, auto, auto);
+}
+.pie-wrapper.progress-75 .pie .half-circle {
+  border-color: #8e44ad;
+}
+.pie-wrapper.progress-75 .pie .left-side {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+.pie-wrapper.progress-75 .pie .right-side {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.pie-wrapper.progress-95 .pie {
+  clip: rect(auto, auto, auto, auto);
+}
+.pie-wrapper.progress-95 .pie .half-circle {
+  border-color: #e74c3c;
+}
+.pie-wrapper.progress-95 .pie .left-side {
+  -webkit-transform: rotate(342deg);
+          transform: rotate(342deg);
+}
+.pie-wrapper.progress-95 .pie .right-side {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.pie-wrapper--solid {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.pie-wrapper--solid:before {
+  border-radius: 0 100% 100% 0 / 50%;
+  content: '';
+  display: block;
+  height: 100%;
+  margin-left: 50%;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+.pie-wrapper--solid .label {
+  background: transparent;
+}
+.pie-wrapper--solid.progress-65 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #e67e22), color-stop(50%, #34495e));
+  background: linear-gradient(to right, #e67e22 50%, #34495e 50%);
+}
+.pie-wrapper--solid.progress-65:before {
+  background: #e67e22;
+  -webkit-transform: rotate(126deg);
+          transform: rotate(126deg);
+}
+.pie-wrapper--solid.progress-25 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #9b59b6), color-stop(50%, #34495e));
+  background: linear-gradient(to right, #9b59b6 50%, #34495e 50%);
+}
+.pie-wrapper--solid.progress-25:before {
+  background: #34495e;
+  -webkit-transform: rotate(-270deg);
+          transform: rotate(-270deg);
+}
+.pie-wrapper--solid.progress-88 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #3498db), color-stop(50%, #34495e));
+  background: linear-gradient(to right, #3498db 50%, #34495e 50%);
+}
+.pie-wrapper--solid.progress-88:before {
+  background: #3498db;
+  -webkit-transform: rotate(43.2deg);
+          transform: rotate(43.2deg);
+}
+
+
+.cardd {
+  /* margin: 0 auto; */
+  width: 300px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14), 0 10px 10px -4px rgba(0, 0, 0, 0.09);
+  margin-bottom: 25px;
+  /* float: left; */
+  margin-right: 3rem; 
+
+}
+@media (max-width:767px){
+    .cardd {
+        margin: 0 auto;
+        width: 250px;
+    }
+}
+
+@media (max-width:767px){
+    .sp_info {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+
+.card-content {
+  padding: 15px 20px 10px;;
+  color: #4a4a4a;
+}
+
+.balance {
+  display: flex;
+  justify-content: space-between;
+}
+
+.balance-right {
+  text-align: right;
+}
+
+.currency {
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 50px;
+  margin-top: 20px;
+}
+
+.balance-title {
+  font-size: 14px;
+}
+
+.balance-amount {
+  font-size: 25px;
+  background-color: transparent;
+  border: #fff solid 1px;
+  outline: none;
+  padding: 2px 5px;
+  width: 75%;
+  color: #fff;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.separator {
+  margin-top: 20px;
+  margin-bottom: 6px;
+  border-bottom: solid 1px rgba(151, 151, 151, 0.2);
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(74, 74, 74, 0.4);
+  transition: 3.3s;
+  
+}
+
+.actions a {
+  transition: color 0.2s ease;
+}
+
+.actions a:hover {
+  color: rgba(74, 74, 74, 0.5);
+}
+
+/**** green ****/
+.green {
+  background-color: #8e44ad;
+}
+
+.orange {
+  background-color: #e8893c;
+}
+
+.red {
+  background-color: #ce593f;
+}
+
+.black {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.green .card-content,
+.orange .card-content,
+.red .card-content,
+.black .card-content{
+  color: #fff;
+}
+
+.green .actions,
+.orange .actions,
+.red .actions,
+.black .actions {
+  color: rgba(256, 256, 256, .8);
+}
+
+.green .actions a:hover,
+.orange .actions a:hover,
+.red .actions a:hover,
+.black .actions a:hover {
+  color: rgba(256, 256, 256, 1);
+}
+
+.green .separator,
+.orange .separator,
+.red .separator,
+.black .separator{
+  border-bottom: solid 1px rgba(256, 256, 256, .4);
+}
+
+
+
+
+
+
+
+        </style>
+ 
+    </head>
+
+    <body>
+
+        <div id="wrapper">
+            
+            <div id="overlay" title="إخفاء"></div>
+            <div id="sidebar">
+
+                <div id="slider-header" class="text-center">
+                    <img src="https://image.flaticon.com/icons/svg/163/163847.svg" class="logo" width="100" height="100" alt="00">
+                    <h3 class="user-name">Admin</h3>
+                </div>
+
+                <ul class="list-unstyled" id="main-menu">
+                    <li><a href="./home.html"><i class="fa fa-fw fa-home"></i> الرئيسية</a></li>
+
+                    <li><a href="./dash_statistics.html"><i class="fas fa-sort-amount-up"></i> الاحصائيات</a></li>
+
+
+
+                    <li><a href="./dashFastorser.html"><i class="fas fa-truck"></i> الطلبات السريعة</a></li>
+
+                    <li><a href="./dashNormalOrder.html"><i class="fa fa-fw fa-copy"></i> الطلبات الشحن</a></li>
+
+
+                    <li><a href="./dashOrder.html"><i class="fa fa-fw fa-tags"></i> طلبات استلام الشحنات</a></li>
+
+                    <li><a href="./dash_setting.html"><i class="fa fa-fw fa-cog"></i> الإعدادات</a></li>
+                    
+                    <li><a href="dash-acconut.html"><i class="fa fa-fw fa-user"></i> حسابى</a></li>
+
+                    <li class="menu-drop"><span><i class="fa fa-fw fa-tags"></i> شركات الشحن</span>
+                        <ul class="list-unstyled">
+                            <li><a href="./dash_allcompany.html"><i class="fas fa-angle-double-left"></i> كل الشركات</a></li>
+                            <li><a href="dash_addcompany.html"><i class="fas fa-angle-double-left"></i> إضافة شركة جديدة</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="menu-drop"><span><i class="fa fa-fw fa-sitemap"></i> فروع شركات الشحن</span>
+                        <ul class="list-unstyled">
+                            <li><a href="dash_allbranch.html"><i class="fas fa-angle-double-left"></i> كل الفروع</a></li>
+                            <li><a href="dash_addbranch.html"><i class="fas fa-angle-double-left"></i> إضافة فرع جديد</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="./dash_addnewone.html"><i class="fas fa-user-plus"></i> اضافة مندوبين</a></li>
+
+
+                    <li>
+                        <a class="nav-link" href="http://send.ji-ex.com/logout" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                            <i class="fas fa-fw fa-power-off"></i> تسجيل خروج
+                        </a>
+
+                        <form id="logout-form" action="http://send.ji-ex.com/logout" method="POST" style="display: none;">
+                            <input type="hidden" name="_token" value="5wDxFYEpdVBKWZG1APyLzWwpAUhHT3c2215dHLDo">                        </form>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="content" >
+                
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <i class="fas fa-align-right" id="toggle-menu"></i>
+                    <a class="navbar-brand" href="http://send.ji-ex.com">جيكس لخدمات الشحن و التوصيل</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://send.ji-ex.com/logout" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-fw fa-power-off"></i> تسجيل خروج
+                                </a>
+
+                                <form id="logout-form" action="http://send.ji-ex.com/logout" method="POST" style="display: none;">
+                                    <input type="hidden" name="_token" value="5wDxFYEpdVBKWZG1APyLzWwpAUhHT3c2215dHLDo">                                </form>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="container">
+                    
+                   
+                    
+                </div>
+
+                <!-- Page Content Here -->
+                <div class="container-fluid">
+
+                    
+                        
+                <div class="center my-4">
+
+                    <div class="card my-3">
+                        <div class="card-header">
+                            <b>  بيانات المندوب</b>
+                        </div>
+                    </div>
+
+                    <div class="set-size charts-container my-3 d-flex justify-content-around">
+
+                        <div class="cardd green p-3">
+                            <div class="card-content">
+                              <div class="balance">
+                                <div class="balance-right">
+                                    <div class="balance-title">إجمالي الرصيد </div>
+                                    <input class="balance-amount" value="5000,00">
+                                  </div>
+                                <div class="balance-left">
+                                  <div class="currency">ريال</div>
+                                </div>
+                              </div>
+                              <div class="separator"></div>
+                              <div class="actions">
+                                <div class="history">
+                                  <a>تأكيد  <i class="fa fa-upload" aria-hidden="true"></i> </a>
+                                </div>
+                                <!-- <div class="recharge">
+                                  <a>تصفير  <i class="fa fa-fw fa-history" aria-hidden="true"></i></a> 
+                                </div> -->
+                              </div>
+                            </div>
+                          </div>
+                          
+
+
+                        <div class="sp_info">
+                            <h6 class="text-left ml-4">معدل توصيل الشحنات</h6>
+
+                            <div class="pie-wrapper progress-75 style-2">
+                                <span class="label">75<span class="smaller">%</span></span>
+                                <div class="pie">
+                                  <div class="left-side half-circle"></div>
+                                  <div class="right-side half-circle"></div>
+                                </div>
+                                <div class="shadow"></div>
+                              </div> 
+    
+                        </div>
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <form action="" method="post">
+                        <input type="hidden" name="_token" value="">
+                        <label>الاسم كامل</label>
+                        <input type="text" class="form-control" name="name" value="name">
+                        <br>
+
+                        <label>البريد الالكترونى</label>
+                        <input type="email" class="form-control" name="email" value="example@mail.com">
+                        <br>
+
+                        <label>كلمة السر</label>
+                        <input type="password" class="form-control" name="password" placeholder="******">
+                        <br>
+
+                        <label> رقم الهاتف</label>
+                        <input type="number" class="form-control" name="phone" placeholder="000000000">
+                        <br>
+
+                        <label> العمر</label>
+                        <input type="number" class="form-control" name="age">
+                        <br>
+
+
+                        <label> الجنس</label>
+                        <select class="form-control">
+                            <option ></option>        
+                            <option >ذكر</option>
+                            <option >أنثي</option>
+
+                        </select>
+                        <br>
+
+
+                        <label> العنوان</label>
+                        <input type="text" class="form-control"  value="محل الاقامة">
+                        <br>
+
+                        <label> مكان التوزيع</label>
+                        
+                        <div class="places">
+                            
+                            <select class="form-control mb-2" id="city">
+                                <option></option>
+                                <option>جدة</option>
+                                <option>الرياض</option>
+                            </select>
+
+                            <div class="small_city">
+
+                                <select class="form-control mb-2"  style="display: none;">
+                                    <option value="جدة">أحياء جدة</option>
+                                    <option> 1جدة</option>
+                                    <option>جدة 2</option>
+                                </select>
+    
+                                <select class="form-control mb-2 "  style="display: none;">
+                                    <option value="الرياض"> أحياء الرياض</option>
+                                    <option> 1الرياض</option>
+                                    <option>الرياض 2</option>
+                                </select>
+                            </div>
+
+                            
+
+                        </div>
+                        <br>
+
+                        <button class="btn btn-primary">تحديث</button>
+
+
+                    </form>
+
+                </div>
+
+                </div><!-- End Page Content Here -->
+
+            </div><!-- End Content -->
+        </div><!-- End wrapper -->
+
+
+
+
+        <!-- <i class="fas fa-angle-up go-up-page"></i> -->
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+        <script src="./js/jqurydatatable.js"></script>
+        <script src="./js/datatable.js"></script>
+
+        <script src="./js/main.js"></script>
+        <script>
+            if(document.querySelector('#city')){
+
+                let allCity = document.querySelectorAll('#city option');
+                let arr_allCity = Array.from(allCity);
+
+                let allSmallCity = document.querySelectorAll('.small_city select');
+                let arr_allSmallCity = Array.from(allSmallCity);
+
+                if(document.querySelector('#city').value != ''){
+                    null
+                }else{
+                    setInterval(() => {
+                        arr_allCity.forEach(element => {
+                            arr_allSmallCity.forEach(ele => {
+                                if(element.parentElement.value == ele.childNodes[1].value){
+                                    arr_allSmallCity.forEach(ele => {
+                                        ele.style.display = 'none';
+                                    })
+                                    ele.style.display = 'block';
+                                }
+                            });
+                            
+                        });
+                    }, 500);
+                   
+
+                }
+            }
+            
+        </script>
+
+
+    </body>
+</html>

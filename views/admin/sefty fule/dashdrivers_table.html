@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>طلبات استلام الشحنات</title>
+
+        <link rel="icon" href="http://send.ji-ex.com/public/icon.png" type="image/gif" sizes="16x16">
+        <link rel="stylesheet" href="./css/all.css" />
+
+        <link rel="stylesheet" href="./css/bootstrap4.3.1-rtl.css" />
+
+
+        <link rel="stylesheet" href="./css/Datatable.css" />
+        <link rel="stylesheet" href="./css/adminstyle.css" />
+    </head>
+
+    <body>
+
+        <div id="wrapper">
+            
+            <div id="overlay" title="إخفاء"></div>
+            <div id="sidebar">
+
+                <div id="slider-header" class="text-center">
+                    <img src="https://image.flaticon.com/icons/svg/163/163847.svg" class="logo" width="100" height="100" alt="00" />
+                    <h3 class="user-name">Admin</h3>
+                </div>
+
+                <ul class="list-unstyled" id="main-menu">
+                   
+                    <li><a href="./dashPassnger_table.html"><i class="fas fa-truck"></i> تصفح الطلبات</a></li>
+
+                    <li><a href="dashPassnger_acconut .html"><i class="fa fa-fw fa-user"></i> حسابى</a></li>
+
+                    <li>
+                        <a class="nav-link" href="http://send.ji-ex.com/logout" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                            <i class="fas fa-fw fa-power-off"></i> تسجيل خروج
+                        </a>
+
+                        <form id="logout-form" action="http://send.ji-ex.com/logout" method="POST" style="display: none;">
+                            <input type="hidden" name="_token" value="5wDxFYEpdVBKWZG1APyLzWwpAUhHT3c2215dHLDo">                        </form>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="content">
+                
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <i class="fas fa-align-right" id="toggle-menu"></i>
+                    <a class="navbar-brand" href="http://send.ji-ex.com">جيكس لخدمات الشحن و التوصيل</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    <i class="fas fa-fw fa-power-off"></i> تسجيل خروج
+                                </a>
+
+                                <form id="logout-form"  style="display: none;">
+                                    <input type="hidden">                 
+                               </form>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="container">
+                    
+                    
+                    
+                    
+                </div>
+
+                <!-- Page Content Here -->
+                <div class="container-fluid">
+                                    
+                    <div class="card">
+                        <div class="card-header">
+                            <b>   الطلبات</b>
+                        </div>
+
+                        <div class="card-body" style="overflow: auto;">
+                            <table class="table table-bordered table-striped" id="table">
+                                <thead>
+                                    <tr>
+                                        <th> الفهرس</th>
+                                        <th>الاسم</th>
+                                        <th>الحساب</th>
+                                        <th>عدد الرحلات</th>
+                                        <th> تاريخ الانشاء</th>
+                                        <th>خيارات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr role="row" class="odd">
+                                        <td class="sorting_1">1</td>
+                                        <td>احمد يوسف</td>
+                                        <td>5,345</td>
+                                        <td>34</td>
+                                        <td>12\56\89</td>
+                                        <td>
+                                            <a class="custom-btn btn btn-primary" title="تصفح" href="./resivSpOreder.html">
+                                                تصفح
+                                            </a>
+                                            
+                                        </td> 
+                                    </tr>
+
+                                    
+                                   
+                                </tbody>
+                                    
+                            </table>
+                           
+                        </div>
+                    </div>
+
+                </div><!-- End Page Content Here -->
+
+            </div><!-- End Content -->
+        </div><!-- End wrapper -->
+
+
+
+
+        <!-- <i class="fas fa-angle-up go-up-page"></i> -->
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+        <script src="./js/jqurydatatable.js"></script>
+        <script src="./js/datatable.js"></script>
+
+        <script>
+            $(document).ready(function() {
+              $('#table').DataTable();
+            
+            } );
+        
+        </script>
+
+
+   <script src="./js/main.js"></script>
+</body>
+</html>

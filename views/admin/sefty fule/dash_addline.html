@@ -1,0 +1,183 @@
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>إضافة فرع جديد</title>
+
+        <link rel="icon" href="http://send.ji-ex.com/public/icon.png" type="image/gif" sizes="16x16">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+
+        <link rel="stylesheet" href="./css/bootstrap4.3.1-rtl.css">
+        <link rel="stylesheet" href="./css/Datatable.css">
+        <link rel="stylesheet" href="./css/adminstyle.css">
+
+        <style>
+            form {
+                background: #FFF;
+                max-width: 600px;
+                margin: auto;
+                border-radius: 5px;
+                border: 1px solid #DDD;
+                padding: 10px;
+            }
+        </style>
+   </head> 
+
+    <body>
+
+        <div id="wrapper">
+            
+            <div id="overlay" title="إخفاء"></div>
+            <div id="sidebar">
+
+                <div id="slider-header" class="text-center">
+                    <img src="https://image.flaticon.com/icons/svg/163/163847.svg" class="logo" width="100" height="100" alt="00">
+                    <h3 class="user-name">Admin</h3>
+                </div>
+
+                <ul class="list-unstyled" id="main-menu">
+                    <li><a href="./home.html"><i class="fa fa-fw fa-home"></i> الرئيسية</a></li>
+
+                    <li><a href="./dash_statistics.html"><i class="fas fa-sort-amount-up"></i> الاحصائيات</a></li>
+
+
+
+                    <li><a href="./dashFastorser.html"><i class="fas fa-truck"></i> الطلبات السريعة</a></li>
+
+                    <li><a href="./dashNormalOrder.html"><i class="fa fa-fw fa-copy"></i> الطلبات الشحن</a></li>
+
+
+                    <li><a href="./dash_allOperatingmovementsdetils.html"><i class="fa fa-fw fa-tags"></i> طلبات استلام الشحنات</a></li>
+
+                    <li><a href="./dash_setting.html"><i class="fa fa-fw fa-cog"></i> الإعدادات</a></li>
+                    
+                    <li><a href="dash-acconut.html"><i class="fa fa-fw fa-user"></i> حسابى</a></li>
+
+                    <li class="menu-drop"><span><i class="fa fa-fw fa-tags"></i> شركات الشحن</span>
+                        <ul class="list-unstyled">
+                            <li><a href="./dash_allcompany.html"><i class="fas fa-angle-double-left"></i> كل الشركات</a></li>
+                            <li><a href="dash_addcompany.html"><i class="fas fa-angle-double-left"></i> إضافة شركة جديدة</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="menu-drop"><span><i class="fa fa-fw fa-sitemap"></i> فروع شركات الشحن</span>
+                        <ul class="list-unstyled">
+                            <li><a href="dash_allOperatingmovements.html"><i class="fas fa-angle-double-left"></i> كل الفروع</a></li>
+                            <li><a href="dash_addline.html"><i class="fas fa-angle-double-left"></i> إضافة فرع جديد</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="./dash_addnewdriver.html"><i class="fas fa-user-plus"></i> اضافة مندوبين</a></li>
+
+
+                    <li>
+                        <a class="nav-link" href="http://send.ji-ex.com/logout" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                            <i class="fas fa-fw fa-power-off"></i> تسجيل خروج
+                        </a>
+
+                        <form id="logout-form" action="http://send.ji-ex.com/logout" method="POST" style="display: none;">
+                            <input type="hidden" name="_token" value="5wDxFYEpdVBKWZG1APyLzWwpAUhHT3c2215dHLDo">                        </form>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="content" style="height: 488px;">
+                
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <i class="fas fa-align-right" id="toggle-menu"></i>
+                    <a class="navbar-brand" href="http://send.ji-ex.com">جيكس لخدمات الشحن و التوصيل</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://send.ji-ex.com/logout" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-fw fa-power-off"></i> تسجيل خروج
+                                </a>
+
+                                <form id="logout-form" action="http://send.ji-ex.com/logout" method="POST" style="display: none;">
+                                    <input type="hidden" name="_token" value="5wDxFYEpdVBKWZG1APyLzWwpAUhHT3c2215dHLDo">                                </form>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="container">
+                    
+                    
+                    
+                    
+                </div>
+
+                <!-- Page Content Here -->
+                <div class="container-fluid">
+                    
+                <div class="container">
+
+                    <h3 class="text-center">إضافة خط جديد</h3>
+                    <br>
+
+                    <form action="http://send.ji-ex.com/admin/add/branch" method="post">
+                        <input type="hidden" name="_token" value="5wDxFYEpdVBKWZG1APyLzWwpAUhHT3c2215dHLDo">			<label>إسم الفرع</label>
+                        <input type="text" class="form-control" value="" name="name">
+                        <br>
+
+                        <label>الشركة</label>
+                        <select class="form-control" name="company_id">
+                            <option value=""></option>
+                                                <option value="1">DHL</option>
+                                                <option value="2">ارامكس</option>
+                                                <option value="3">سمسا</option>
+                                                <option value="4">زاجل</option>
+                                                <option value="5">الشملاني</option>
+                                                <option value="6">البدر</option>
+                                                <option value="7">المهند</option>
+                                                <option value="8">الصيعري</option>
+                                                <option value="9">ناقل</option>
+                                                <option value="10">نون</option>
+                                                <option value="11">يو بي اس</option>
+                                        </select>
+                        <br>
+                        <input type="hidden" name="_token" value="5wDxFYEpdVBKWZG1APyLzWwpAUhHT3c2215dHLDo">			<label>من</label>
+                        <input type="text" class="form-control" value="" name="name">
+                        <br>
+                        <input type="hidden" name="_token" value="5wDxFYEpdVBKWZG1APyLzWwpAUhHT3c2215dHLDo">			<label>الى</label>
+                        <input type="text" class="form-control" value="" name="name">
+                        <br>
+                        <button class="btn btn-primary">إضافة</button>
+                        <a class="btn btn-danger" href="http://send.ji-ex.com/admin/branches">كل الخطوط</a>
+                    </form>
+                </div>
+
+                </div><!-- End Page Content Here -->
+
+            </div><!-- End Content -->
+        </div><!-- End wrapper -->
+
+
+
+
+        <!-- <i class="fas fa-angle-up go-up-page"></i> -->
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+        <script src="./js/jqurydatatable.js"></script>
+        <script src="./js/datatable.js"></script>
+
+                <script src="./js/main.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<%-include('../partials/header.html')%>
+<link rel="stylesheet" href="./css/adminstyle.css">
+
+
+<style>
+    .center {
+        background: #FFF;
+        padding: 10px;
+        border: 1px solid #DDD;
+        border-radius: 5px;
+        margin: 20px auto;
+        max-width: 1000px;
+    }
+</style>
+    <title>Admin Home</title>
+
+    </head>
+
+    <body>
+
+        <div id="wrapper">
+            
+            <div id="overlay" title="إخفاء"></div>
+
+            <%-include('partials/sidebar.html')%>
+
+            <div id="content" style="height: 597px;">
+                
+                <%-include('partials/navbar.html')%>
+
+
+             
+<div class="container">
+                    
+                    
+                    
+                    
+</div>
+
+<!-- Page Content Here -->
+<div class="container-fluid">
+   
+    
+    <div class="center">
+        <div class="card mb-3">
+            <div class="card-header">
+                <b>الاعدادات</b>
+            </div>
+        </div>
+        <form action="http://send.ji-ex.com/admin/update/settings" method="post">
+            <input type="hidden" name="_token" value="5wDxFYEpdVBKWZG1APyLzWwpAUhHT3c2215dHLDo">
+            <label>إســـم الموقع</label>
+            <input class="form-control" type="text" name="site_name" value="جيكس لخدمات الشحن و التوصيل">
+            <br>
+
+            <label>وصف لمحرك البحث</label>
+            <textarea class="form-control" rows="5" name="site_des">خدمات الشحن و التوصيل</textarea>
+            <br>
+
+            <label> سعر التوصيل الشخصي</label>
+            <input class="form-control" type="text" name="site_name" value="29 ريال">
+            <br>
+
+            <label> سعر التوصل التجاري</label>
+            <input class="form-control" type="text" name="site_name" value="89 ريال">
+            <br>
+
+            <label> سعر استلام الشحنة</label>
+            <input class="form-control" type="text" name="site_name" value="94 ريال">
+            <br>
+
+            <label>   تكلفة الشحن الاضافي</label>
+            <input class="form-control" type="text" name="site_name" value="9 ريال">
+            <br>
+
+            <label> رسالة التنبيه </label>
+            <textarea class="form-control text-right" rows="6" dir="ltr" name="code_head">
+                عزيزي العميل.. في حال ادخالك لبيانات الطلب قبل السابعه صباحاَ سوف يتم توصيل الطلب في نفس اليوم اذا كان الطلب في نفس المدينة و في حال تسجيل الطلب بعد السابعه صباحا سوف يكون في اليوم التالي وع التوضيح بأن الجمعه اجازة. و للتنويه فإن سعر الخدمة ٢٩ ريال      
+            </textarea>
+            <br>
+
+
+            <button onclick="if(confirm('هل أنت من تحديث البيانات')){return true;}else{return false;}" class="btn btn-primary">
+                <i class="fa fa-edit"></i> تحديث
+            </button>
+
+        </form>
+    </div>
+
+</div><!-- End Page Content Here -->
+
+            </div><!-- End Content -->
+        </div><!-- End wrapper -->
+
+
+        <%-include('../partials/footer.html')%>
+
+

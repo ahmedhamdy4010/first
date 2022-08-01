@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>طلبات استلام الشحنات</title>
+
+        <link rel="icon" href="http://send.ji-ex.com/public/icon.png" type="image/gif" sizes="16x16">
+        <link rel="stylesheet" href="./css/all.css" />
+
+        <link rel="stylesheet" href="./css/bootstrap4.3.1-rtl.css" />
+
+
+        <link rel="stylesheet" href="./css/Datatable.css" />
+        <link rel="stylesheet" href="./css/adminstyle.css" />
+    </head>
+
+    <body>
+
+        <div id="wrapper">
+            
+            <div id="overlay" title="إخفاء"></div>
+            <div id="sidebar">
+
+                <div id="slider-header" class="text-center">
+                    <img src="https://image.flaticon.com/icons/svg/163/163847.svg" class="logo" width="100" height="100" alt="00" />
+                    <h3 class="user-name">Admin</h3>
+                </div>
+
+                <ul class="list-unstyled" id="main-menu">
+                    <li><a href="./home.html"><i class="fa fa-fw fa-home"></i> الرئيسية</a></li>
+
+                    <li><a href="./dash_statistics.html"><i class="fas fa-sort-amount-up"></i> الاحصائيات</a></li>
+
+
+
+                    <li><a href="./dashFastorser.html"><i class="fas fa-shipping-fast"></i> الطلبات السريعة</a></li>
+
+                    <li><a href="./dashNormalOrder.html"><i class="fa fa-fw fa-copy"></i> الطلبات الشحن</a></li>
+
+
+                    <li><a href="./dash_allOperatingmovementsdetils.html"><i class="fa fa-fw fa-tags"></i> طلبات استلام الشحنات</a></li>
+
+                    <li><a href="./dash_setting.html"><i class="fa fa-fw fa-cog"></i> الإعدادات</a></li>
+                    
+                    <li><a href="dash-acconut.html"><i class="fa fa-fw fa-user"></i> حسابى</a></li>
+
+                    <li class="menu-drop"><span><i class="fa fa-fw fa-tags"></i> شركات الشحن</span>
+                        <ul class="list-unstyled">
+                            <li><a href="./dash_allcompany.html"><i class="fas fa-angle-double-left"></i> كل الشركات</a></li>
+                            <li><a href="dash_addcompany.html"><i class="fas fa-angle-double-left"></i> إضافة شركة جديدة</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="menu-drop"><span><i class="fa fa-fw fa-sitemap"></i> فروع شركات الشحن</span>
+                        <ul class="list-unstyled">
+                            <li><a href="dash_allOperatingmovements.html"><i class="fas fa-angle-double-left"></i> كل الفروع</a></li>
+                            <li><a href="dash_addbranch.html"><i class="fas fa-angle-double-left"></i> إضافة فرع جديد</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="./dash_addnewone.html"><i class="fas fa-user-plus"></i> اضافة مندوبين</a></li>
+
+
+                    <li>
+                        <a class="nav-link" href="http://send.ji-ex.com/logout" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                            <i class="fas fa-fw fa-power-off"></i> تسجيل خروج
+                        </a>
+
+                        <form id="logout-form" action="http://send.ji-ex.com/logout" method="POST" style="display: none;">
+                            <input type="hidden" name="_token" value="5wDxFYEpdVBKWZG1APyLzWwpAUhHT3c2215dHLDo">                        </form>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="content">
+                
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <i class="fas fa-align-right" id="toggle-menu"></i>
+                    <a class="navbar-brand" href="http://send.ji-ex.com">جيكس لخدمات الشحن و التوصيل</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    <i class="fas fa-fw fa-power-off"></i> تسجيل خروج
+                                </a>
+
+                                <form id="logout-form"  style="display: none;">
+                                    <input type="hidden">                 
+                               </form>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="container">
+                    
+                    
+                    
+                    
+                </div>
+
+                <!-- Page Content Here -->
+                <div class="container-fluid">
+                                    
+                    <div class="card">
+                        <div class="card-header">
+                            <b><h5>حركات التشغيل</h5></b>
+                        </div>
+
+                        <div class="card-body" style="overflow: auto;">
+                            <table class="table table-bordered table-striped" id="table">
+                                <thead>
+                                    <tr>
+                                        <th> فهرس</th>
+                                        <th> الخط</th>
+                                        <th>  اسم الشركة</th>
+                                        <th> المندوب </th>
+                                        <th> السياره</th>
+                                        <th> الحركه</th>
+                                        <th> وقت الأنشاء</th>
+                                        <th>خيارات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr role="row" class="odd">
+                                        <td class="sorting_1">1</td>
+                                        <td>الجامعه -التجمع</td>
+                                        <td>الاامكس</td>
+                                        <td>احمد يوسف </td>
+                                        <td>asr-1234</td>
+                                        <td>ذهاب وعوده</td>
+
+                                        <td>2020-06-13 18:59:55</td>
+                                        <td>
+                                            <a class="custom-btn btn btn-primary" title="تعديل" href="./dash_editbranch .html">
+                                                <span class="fa fa-fw fa-edit"></span>
+                                            </a>
+                                            <form style="display:inline-block" action="/admin/destroy/receipt" method="post">
+                                                <input type="hidden" name="_token" value="">
+                                                <input type="hidden" name="id" value="1">
+                                                <button onclick="if(confirm('هل أنت متاكد من حذف طلب رقم: 1')){return true;}else{return false;}" class="btn btn-danger custom-btn">
+                                                    <span class="fas fa-fw fa-trash-alt"></span>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    
+                                   
+                                </tbody>
+                                    
+                            </table>
+                           
+                        </div>
+                    </div>
+
+                </div><!-- End Page Content Here -->
+
+            </div><!-- End Content -->
+        </div><!-- End wrapper -->
+
+
+
+
+        <!-- <i class="fas fa-angle-up go-up-page"></i> -->
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+        <script src="./js/jqurydatatable.js"></script>
+        <script src="./js/datatable.js"></script>
+
+        <script>
+            $(document).ready(function() {
+              $('#table').DataTable();
+            
+            } );
+        
+        </script>
+
+
+   <script src="./js/main.js"></script>
+</body>
+</html>
