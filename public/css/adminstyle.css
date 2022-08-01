@@ -1,0 +1,148 @@
+body {
+	background-color: #f5f5f5;
+}
+a,
+a:hover{text-decoration: none;}
+
+#wrapper #sidebar {
+    position: fixed;
+    right: -250px;
+    top: 0;
+    height: 100%;
+    background: #2f3542;
+    width: 250px;
+    overflow: auto;
+    transition: all .3s ease-in-out;
+    z-index: 9999;
+}
+#wrapper #overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(47, 53, 66, 0.50);
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    display: none;
+}
+
+#wrapper #sidebar #slider-header {
+    padding: 10px 5px;
+    background-color: #57606f;
+}
+#wrapper #sidebar #slider-header img {
+	background-color: #FFF;
+    border-radius: 50%;
+    padding: 5px;
+    transition: all .3s ease-in-out;
+}
+#wrapper #sidebar #slider-header img:hover {
+	transform: scale(1.1);
+}
+
+#wrapper #sidebar #slider-header .user-name {
+	color: #FFF;
+	margin-top: 10px;
+}
+
+/*************/
+#wrapper #sidebar #main-menu a,
+#wrapper #sidebar #main-menu .menu-drop span {
+	color: #f5f5f5;
+	display: block;
+	padding: 5px;
+	transition: all .3s ease-in-out;
+	cursor: pointer;
+	position: relative;
+	border-bottom: 1px solid #1e2025;
+}
+#wrapper #sidebar #main-menu .menu-drop span:before{
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    border-style: solid;
+    border-color: #b9b9b9 transparent transparent transparent;
+    border-width: 7px;
+}
+#wrapper #sidebar #main-menu a:hover {
+	background: #747d8c;
+	padding-right: 10px;
+}
+#wrapper #sidebar #main-menu .menu-drop span:hover {
+	background: #747d8c;
+}
+#wrapper #sidebar #main-menu .open {
+	background: #747d8c;
+	transition: all .3s ease-in-out;
+}
+
+#wrapper #sidebar #main-menu .menu-drop ul {
+	background: #57606f;
+    border-bottom: 1px solid #878787;
+	display: none;
+}
+
+#wrapper #sidebar #main-menu .menu-drop ul li a {
+    padding: 5px;
+    display: block;
+    color: #f5f5f5;
+    transition: all .3s ease-in-out;
+    border-bottom: none;
+}
+#wrapper #sidebar #main-menu .menu-drop ul li a:hover {
+	background: #2f3542;
+	padding-right: 10px;
+}
+/***********/
+#wrapper #content #toggle-menu {
+	cursor: pointer;
+	font-size: 30px;
+	color: #e4e4e4;
+}
+@media (min-width: 576px) {
+	#wrapper #content #toggle-menu {
+		margin-right: 30px;
+		margin-left: 30px;
+	}
+}
+#wrapper #content {margin-top: 60px;overflow: auto;}
+
+
+
+
+
+
+
+
+
+
+
+
+div.dataTables_wrapper
+div.dataTables_filter{
+    text-align: left;
+}
+
+
+
+
+.custom-form {
+    background: #FFF;
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+}
+
+.custom-btn {
+    padding: 0 5px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+.card {
+    overflow: hidden;
+}
+.table {
+    overflow: auto;
+    
+}
